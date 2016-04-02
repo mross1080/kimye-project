@@ -1,0 +1,18 @@
+doctype html
+html
+  head
+    title Dashboard
+    script(src='http://code.jquery.com/jquery-1.11.3.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js', charset='utf-8')
+    script(type='text/javascript', src='/javascripts/rickshaw.min.js')
+    script(type='text/javascript', src='javascripts/render.js')
+    link(rel="stylesheet",href="/stylesheets/style.css")
+    link(rel="stylesheet",href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css")
+  body
+
+    .navbar(style="Background-Color:hsl(175, 98%, 24%)")
+      .super-nav
+        .container(style="Height:80px",id="hello")
+            img(style="Height:80px",src="/images/Pivotal_WhiteOnTeal.png")
+
+    block content

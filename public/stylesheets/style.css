@@ -1,0 +1,30 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.graph{
+  Border: 1px solid #eee;
+}
+
+.chart_container {
+        position: relative;
+        font-family: Arial, Helvetica, sans-serif;
+}
+.chart {
+        position: relative;
+        left: 40px;
+}
+.rickshaw_graph .y_ticks {
+        left: 0;
+}
+.y_axis {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 40px;
+}

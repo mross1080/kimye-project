@@ -1,0 +1,27 @@
+extends layout
+
+block content
+  .container
+    iframe(width='100%', height='450', scrolling='no', frameborder='no', src='https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/242543650&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&visual=true')
+    <div class="row">
+    .row
+      .gifContainer(class="col-md-3",id="1")
+        iframe.giphy-embed(src='//giphy.com/embed/fysOWwtuDgwgM', width='400', height='225', frameborder='0', allowfullscreen='')
+      .gifContainer(class="col-md-3",id="2")
+        iframe.giphy-embed(src='//giphy.com/embed/1FPe1J4lOeyg8', width='400', height='225', frameborder='0', allowfullscreen='')
+      .gifContainer(class="col-md-3",id="3")
+        iframe.giphy-embed(src='//giphy.com/embed/jqarbfe3zU0Ja', width='400', height='225', frameborder='0', allowfullscreen='')
+      .gifContainer(class="col-md-3",id="4")
+        iframe.giphy-embed(src='//giphy.com/embed/bVJcpqxtUg6pW', width='400', height='225', frameborder='0', allowfullscreen='')
+
+  script.
+    $("#1").append("10 Votes <button type='button' class='btn btn-primary'>Upvote Reaction</button>")
+    $("#2").append("9 Votes <button type='button' class='btn btn-primary'>Upvote Reaction</button>")
+    $("#3").append("8 Votes <button type='button' class='btn btn-primary'>Upvote Reaction</button>")
+    $("#4").append("3 Votes <button type='button' class='btn btn-primary'>Upvote Reaction</button>")
+
+    
+    
+
+
+    
