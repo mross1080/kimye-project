@@ -1,9 +1,11 @@
 extends layout
 
 block content
-  .container
+  .container()
     iframe(width='100%', height='450', scrolling='no', frameborder='no', src='https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/242543650&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&visual=true')
-    <div class="row">
+    .row
+      h2(id="counter") 
+        0
     .row
       .gifContainer(class="col-md-3",id="1")
         iframe.giphy-embed(src='//giphy.com/embed/fysOWwtuDgwgM', width='400', height='225', frameborder='0', allowfullscreen='')
@@ -15,6 +17,45 @@ block content
         iframe.giphy-embed(src='//giphy.com/embed/bVJcpqxtUg6pW', width='400', height='225', frameborder='0', allowfullscreen='')
 
   script.
+    var counter = 0;
+    setInterval(function(){ 
+      counter = counter + 1
+      val = $("#counter").val();
+      console.log("so meta");
+      if (counter > 3) {
+        counter =0;
+      }
+      getRates(counter)
+    } , 10000);
+    
+    function getRates(key) {
+        console.log(key)
+        $.ajax({url: "/api?q=" + key, success: function(results){
+              console.log(results)
+
+              $("#1").empty()
+              $("#2").empty()
+              $("#3").empty()
+              $("#4").empty()
+              for (i in results) {
+                url = results["urls"]
+                console.log(results)
+                for (x in url) {
+                  $("#" + x).append("<iframe src='" + url[x] + "' width='480' height='269' frameBorder='0' class='giphy-embed' allowFullScreen></iframe")
+                  $("#" + x).append("10 Votes <button type='button' class='btn btn-primary'>Upvote Reaction</button>")
+
+                  console.log(url[x])
+                }
+                console.log(url)
+              }
+              
+              
+              
+
+                }
+
+        });
+    }
     $("#1").append("10 Votes <button type='button' class='btn btn-primary'>Upvote Reaction</button>")
     $("#2").append("9 Votes <button type='button' class='btn btn-primary'>Upvote Reaction</button>")
     $("#3").append("8 Votes <button type='button' class='btn btn-primary'>Upvote Reaction</button>")

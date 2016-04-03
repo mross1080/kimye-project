@@ -28,7 +28,7 @@ app.post('/me',routes.hi);
 app.get('/', routes.hello);
 app.use('/users', users);
 app.get('/hero',routes.hero);
-app.post('/quiz', routes.gradequiz);
+app.get('/api', routes.geturls);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
